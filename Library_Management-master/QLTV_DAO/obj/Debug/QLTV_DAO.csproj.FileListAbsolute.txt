@@ -1,0 +1,17 @@
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DAO.dll.config
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DAO.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DAO.pdb
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\EntityFramework.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DTO.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DTO.pdb
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\QLTV_DTO.dll.config
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\EntityFramework.xml
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\obj\Debug\QLTV_DAO.csproj.AssemblyReference.cache
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\obj\Debug\QLTV_DAO.csproj.CoreCompileInputs.cache
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\obj\Debug\QLTV_DAO.csproj.CopyComplete
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\obj\Debug\QLTV_DAO.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\obj\Debug\QLTV_DAO.pdb
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\DevExpress.Data.v23.1.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DAO\bin\Debug\DevExpress.Data.v23.1.xml

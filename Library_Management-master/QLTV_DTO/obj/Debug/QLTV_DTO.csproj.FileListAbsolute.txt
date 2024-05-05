@@ -1,0 +1,14 @@
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\QLTV_DTO.dll.config
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\QLTV_DTO.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\QLTV_DTO.pdb
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\EntityFramework.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\EntityFramework.xml
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\obj\Debug\QLTV_DTO.csproj.AssemblyReference.cache
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\obj\Debug\QLTV_DTO.csproj.CoreCompileInputs.cache
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\obj\Debug\QLTV_DTO.csproj.CopyComplete
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\obj\Debug\QLTV_DTO.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\obj\Debug\QLTV_DTO.pdb
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\DevExpress.Data.v23.1.dll
+C:\Users\TechCare\Downloads\Compressed\Library_Management-master\QLTV_DTO\bin\Debug\DevExpress.Data.v23.1.xml

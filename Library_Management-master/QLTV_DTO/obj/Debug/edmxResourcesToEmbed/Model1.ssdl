@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyThuVienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="IDAccount" />
+    </Key>
+    <Property Name="IDAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordAccount" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TypeOfAccount" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="IDAdmin" />
+    </Key>
+    <Property Name="IDAdmin" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameAdmin" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NumberPhone" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BCTKMUONSACH">
+    <Key>
+      <PropertyRef Name="MaBCTKMuonSach" />
+    </Key>
+    <Property Name="MaBCTKMuonSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Thang" Type="date" Nullable="false" />
+    <Property Name="TongSoLuotMuon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BCTKTRATRE">
+    <Key>
+      <PropertyRef Name="MaBCTKTraTre" />
+    </Key>
+    <Property Name="MaBCTKTraTre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ngay" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHITIETPHANQUYEN">
+    <Key>
+      <PropertyRef Name="IDAccount" />
+      <PropertyRef Name="IDPer" />
+    </Key>
+    <Property Name="IDAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDPer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="suspended" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTBCTKMUONSACH">
+    <Key>
+      <PropertyRef Name="MaBCTKMuonSach" />
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaBCTKMuonSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaTheLoai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoLuotMuon" Type="int" Nullable="false" />
+    <Property Name="TiLe" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTBCTKTRATRE">
+    <Key>
+      <PropertyRef Name="MaBCTKTraTre" />
+      <PropertyRef Name="MaPhieuMS" />
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaBCTKTraTre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaPhieuMS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoNgayTraTre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTPHIEUMUON">
+    <Key>
+      <PropertyRef Name="MaPhieuMS" />
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaPhieuMS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HanTra" Type="datetime" Nullable="false" />
+    <Property Name="TinhTrangMuon" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOCGIA">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+    </Key>
+    <Property Name="MaDocGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NgaySinh" Type="date" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NgayLapThe" Type="date" Nullable="false" />
+    <Property Name="NgayHetHan" Type="date" Nullable="false" />
+    <Property Name="MaLoaiDocGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TongNo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GioiThieu" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="LOAIDOCGIA">
+    <Key>
+      <PropertyRef Name="MaLoaiDocGia" />
+    </Key>
+    <Property Name="MaLoaiDocGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLoaiDocGia" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERMISSION">
+    <Key>
+      <PropertyRef Name="IDPer" />
+    </Key>
+    <Property Name="IDPer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NamePer" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeAction" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PHIEUMUONSACH">
+    <Key>
+      <PropertyRef Name="MaPhieuMS" />
+    </Key>
+    <Property Name="MaPhieuMS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaDocGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayMuon" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHIEUTHUTIENPHAT">
+    <Key>
+      <PropertyRef Name="MaPhieuThuTP" />
+    </Key>
+    <Property Name="MaPhieuThuTP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaDocGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TongNo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SoTienThu" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ConLai" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NgayThu" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHIEUTRASACH">
+    <Key>
+      <PropertyRef Name="MaPhieuMS" />
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaPhieuMS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayTra" Type="date" Nullable="false" />
+    <Property Name="SoNgayMuon" Type="int" Nullable="false" />
+    <Property Name="TienPhat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TinhTrangTraSach" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaSach" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSach" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaTheLoai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NamXuatBan" Type="int" Nullable="false" />
+    <Property Name="NhaXuatBan" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaTacGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayNhap" Type="date" Nullable="false" />
+    <Property Name="TriGia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MaTinhTrang" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TACGIA">
+    <Key>
+      <PropertyRef Name="MaTacGia" />
+    </Key>
+    <Property Name="MaTacGia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenTacGia" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THAMSO">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TuoiToiDa" Type="int" Nullable="false" />
+    <Property Name="TuoiToiThieu" Type="int" Nullable="false" />
+    <Property Name="ThoiHanThe" Type="int" Nullable="false" />
+    <Property Name="KhoangCachXB" Type="int" Nullable="false" />
+    <Property Name="SoNgayMuonMax" Type="int" Nullable="false" />
+    <Property Name="SoSachMuonMax" Type="int" Nullable="false" />
+    <Property Name="TPTraTreMotNgay" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SoLuongTheLoaiMax" Type="int" Nullable="false" />
+    <Property Name="SoLuongTacGia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THELOAI">
+    <Key>
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaTheLoai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenTheLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TINHTRANG">
+    <Key>
+      <PropertyRef Name="MaTinhTrang" />
+    </Key>
+    <Property Name="MaTinhTrang" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenTinhTrang" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ADMIN_ACCOUNT">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="IDAccount" />
+      </Principal>
+      <Dependent Role="ADMIN">
+        <PropertyRef Name="IDAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETPHANQUYEN_ACCOUNT">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+    <End Role="CHITIETPHANQUYEN" Type="Self.CHITIETPHANQUYEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="IDAccount" />
+      </Principal>
+      <Dependent Role="CHITIETPHANQUYEN">
+        <PropertyRef Name="IDAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETPHANQUYEN_PERMISSION">
+    <End Role="PERMISSION" Type="Self.PERMISSION" Multiplicity="1" />
+    <End Role="CHITIETPHANQUYEN" Type="Self.CHITIETPHANQUYEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERMISSION">
+        <PropertyRef Name="IDPer" />
+      </Principal>
+      <Dependent Role="CHITIETPHANQUYEN">
+        <PropertyRef Name="IDPer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTBCTKMUONSACH_BCTKMUONSACH">
+    <End Role="BCTKMUONSACH" Type="Self.BCTKMUONSACH" Multiplicity="1" />
+    <End Role="CTBCTKMUONSACH" Type="Self.CTBCTKMUONSACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BCTKMUONSACH">
+        <PropertyRef Name="MaBCTKMuonSach" />
+      </Principal>
+      <Dependent Role="CTBCTKMUONSACH">
+        <PropertyRef Name="MaBCTKMuonSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTBCTKMUONSACH_THELOAI">
+    <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="1" />
+    <End Role="CTBCTKMUONSACH" Type="Self.CTBCTKMUONSACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THELOAI">
+        <PropertyRef Name="MaTheLoai" />
+      </Principal>
+      <Dependent Role="CTBCTKMUONSACH">
+        <PropertyRef Name="MaTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTBCTKTRATRE_BCTKTRATRE">
+    <End Role="BCTKTRATRE" Type="Self.BCTKTRATRE" Multiplicity="1" />
+    <End Role="CTBCTKTRATRE" Type="Self.CTBCTKTRATRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BCTKTRATRE">
+        <PropertyRef Name="MaBCTKTraTre" />
+      </Principal>
+      <Dependent Role="CTBCTKTRATRE">
+        <PropertyRef Name="MaBCTKTraTre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTBCTKTRATRE_PHIEUTRASACH">
+    <End Role="PHIEUTRASACH" Type="Self.PHIEUTRASACH" Multiplicity="1" />
+    <End Role="CTBCTKTRATRE" Type="Self.CTBCTKTRATRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUTRASACH">
+        <PropertyRef Name="MaPhieuMS" />
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="CTBCTKTRATRE">
+        <PropertyRef Name="MaPhieuMS" />
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPHIEUMUON_PHIEUMUONSACH">
+    <End Role="PHIEUMUONSACH" Type="Self.PHIEUMUONSACH" Multiplicity="1" />
+    <End Role="CTPHIEUMUON" Type="Self.CTPHIEUMUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUMUONSACH">
+        <PropertyRef Name="MaPhieuMS" />
+      </Principal>
+      <Dependent Role="CTPHIEUMUON">
+        <PropertyRef Name="MaPhieuMS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPHIEUMUON_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+    <End Role="CTPHIEUMUON" Type="Self.CTPHIEUMUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="CTPHIEUMUON">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCGIA_LOAIDOCGIA">
+    <End Role="LOAIDOCGIA" Type="Self.LOAIDOCGIA" Multiplicity="1" />
+    <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIDOCGIA">
+        <PropertyRef Name="MaLoaiDocGia" />
+      </Principal>
+      <Dependent Role="DOCGIA">
+        <PropertyRef Name="MaLoaiDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCGIA_USER">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+    <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="IDAccount" />
+      </Principal>
+      <Dependent Role="DOCGIA">
+        <PropertyRef Name="IDAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUMUONSACH_DOCGIA">
+    <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+    <End Role="PHIEUMUONSACH" Type="Self.PHIEUMUONSACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCGIA">
+        <PropertyRef Name="MaDocGia" />
+      </Principal>
+      <Dependent Role="PHIEUMUONSACH">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUTHUTIENPHAT_DOCGIA">
+    <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+    <End Role="PHIEUTHUTIENPHAT" Type="Self.PHIEUTHUTIENPHAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCGIA">
+        <PropertyRef Name="MaDocGia" />
+      </Principal>
+      <Dependent Role="PHIEUTHUTIENPHAT">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUTRASACH_CTPHIEUMUON">
+    <End Role="CTPHIEUMUON" Type="Self.CTPHIEUMUON" Multiplicity="1" />
+    <End Role="PHIEUTRASACH" Type="Self.PHIEUTRASACH" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CTPHIEUMUON">
+        <PropertyRef Name="MaPhieuMS" />
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="PHIEUTRASACH">
+        <PropertyRef Name="MaPhieuMS" />
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_TACGIA">
+    <End Role="TACGIA" Type="Self.TACGIA" Multiplicity="1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TACGIA">
+        <PropertyRef Name="MaTacGia" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaTacGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_THELOAI">
+    <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THELOAI">
+        <PropertyRef Name="MaTheLoai" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_TINHTRANG">
+    <End Role="TINHTRANG" Type="Self.TINHTRANG" Multiplicity="1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINHTRANG">
+        <PropertyRef Name="MaTinhTrang" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaTinhTrang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyThuVienModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BCTKMUONSACH" EntityType="Self.BCTKMUONSACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BCTKTRATRE" EntityType="Self.BCTKTRATRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETPHANQUYEN" EntityType="Self.CHITIETPHANQUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTBCTKMUONSACH" EntityType="Self.CTBCTKMUONSACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTBCTKTRATRE" EntityType="Self.CTBCTKTRATRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTPHIEUMUON" EntityType="Self.CTPHIEUMUON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIDOCGIA" EntityType="Self.LOAIDOCGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUMUONSACH" EntityType="Self.PHIEUMUONSACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUTHUTIENPHAT" EntityType="Self.PHIEUTHUTIENPHAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUTRASACH" EntityType="Self.PHIEUTRASACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TACGIA" EntityType="Self.TACGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TINHTRANG" EntityType="Self.TINHTRANG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ADMIN_ACCOUNT" Association="Self.FK_ADMIN_ACCOUNT">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="ADMIN" EntitySet="ADMIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETPHANQUYEN_ACCOUNT" Association="Self.FK_CHITIETPHANQUYEN_ACCOUNT">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="CHITIETPHANQUYEN" EntitySet="CHITIETPHANQUYEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETPHANQUYEN_PERMISSION" Association="Self.FK_CHITIETPHANQUYEN_PERMISSION">
+      <End Role="PERMISSION" EntitySet="PERMISSION" />
+      <End Role="CHITIETPHANQUYEN" EntitySet="CHITIETPHANQUYEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTBCTKMUONSACH_BCTKMUONSACH" Association="Self.FK_CTBCTKMUONSACH_BCTKMUONSACH">
+      <End Role="BCTKMUONSACH" EntitySet="BCTKMUONSACH" />
+      <End Role="CTBCTKMUONSACH" EntitySet="CTBCTKMUONSACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTBCTKMUONSACH_THELOAI" Association="Self.FK_CTBCTKMUONSACH_THELOAI">
+      <End Role="THELOAI" EntitySet="THELOAI" />
+      <End Role="CTBCTKMUONSACH" EntitySet="CTBCTKMUONSACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTBCTKTRATRE_BCTKTRATRE" Association="Self.FK_CTBCTKTRATRE_BCTKTRATRE">
+      <End Role="BCTKTRATRE" EntitySet="BCTKTRATRE" />
+      <End Role="CTBCTKTRATRE" EntitySet="CTBCTKTRATRE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTBCTKTRATRE_PHIEUTRASACH" Association="Self.FK_CTBCTKTRATRE_PHIEUTRASACH">
+      <End Role="PHIEUTRASACH" EntitySet="PHIEUTRASACH" />
+      <End Role="CTBCTKTRATRE" EntitySet="CTBCTKTRATRE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPHIEUMUON_PHIEUMUONSACH" Association="Self.FK_CTPHIEUMUON_PHIEUMUONSACH">
+      <End Role="PHIEUMUONSACH" EntitySet="PHIEUMUONSACH" />
+      <End Role="CTPHIEUMUON" EntitySet="CTPHIEUMUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPHIEUMUON_SACH" Association="Self.FK_CTPHIEUMUON_SACH">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="CTPHIEUMUON" EntitySet="CTPHIEUMUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCGIA_LOAIDOCGIA" Association="Self.FK_DOCGIA_LOAIDOCGIA">
+      <End Role="LOAIDOCGIA" EntitySet="LOAIDOCGIA" />
+      <End Role="DOCGIA" EntitySet="DOCGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCGIA_USER" Association="Self.FK_DOCGIA_USER">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="DOCGIA" EntitySet="DOCGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUMUONSACH_DOCGIA" Association="Self.FK_PHIEUMUONSACH_DOCGIA">
+      <End Role="DOCGIA" EntitySet="DOCGIA" />
+      <End Role="PHIEUMUONSACH" EntitySet="PHIEUMUONSACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUTHUTIENPHAT_DOCGIA" Association="Self.FK_PHIEUTHUTIENPHAT_DOCGIA">
+      <End Role="DOCGIA" EntitySet="DOCGIA" />
+      <End Role="PHIEUTHUTIENPHAT" EntitySet="PHIEUTHUTIENPHAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUTRASACH_CTPHIEUMUON" Association="Self.FK_PHIEUTRASACH_CTPHIEUMUON">
+      <End Role="CTPHIEUMUON" EntitySet="CTPHIEUMUON" />
+      <End Role="PHIEUTRASACH" EntitySet="PHIEUTRASACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_TACGIA" Association="Self.FK_SACH_TACGIA">
+      <End Role="TACGIA" EntitySet="TACGIA" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_THELOAI" Association="Self.FK_SACH_THELOAI">
+      <End Role="THELOAI" EntitySet="THELOAI" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_TINHTRANG" Association="Self.FK_SACH_TINHTRANG">
+      <End Role="TINHTRANG" EntitySet="TINHTRANG" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
